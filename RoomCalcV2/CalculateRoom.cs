@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RoomCalcV2
 {
-    class Program
+    public class CalculateRoom
     {
         // function for getting user input, takes the message which is shown to the user as an arguement
         static private float GetUserInput(string promptmsg)
@@ -34,7 +34,7 @@ namespace RoomCalcV2
         }
 
         // function that calculates the amount of paint required for all of the walls
-        static private float CalcWallPaint(List<float> wallsize, float wallheight)
+        static public float CalcWallPaint(List<float> wallsize, float wallheight)
         {
             float totalwallarea = 0;           
             
@@ -70,7 +70,7 @@ namespace RoomCalcV2
             Console.WriteLine("The area of the room is: " + area + " metres squared");
 
             volume = calcRoomVolume(wallsize, wallheight);
-            Console.WriteLine("The volume of the room is: " + volume + "metres cubed");
+            Console.WriteLine("The volume of the room is: " + volume + " metres cubed");
 
             requiredpaint = CalcWallPaint(wallsize, wallheight);
             coats = GetUserInput("Enter the number of coats");
