@@ -8,6 +8,7 @@ namespace RoomCalcV2
 {
     class Program
     {
+        // function for getting user input, takes the message which is shown to the user as an arguement
         static private float GetUserInput(string promptmsg)
         {
             float numberinput = 0;
@@ -32,11 +33,10 @@ namespace RoomCalcV2
             return numberinput;
         }
 
-        static private float CalcWallPaint(List<float> wallsize)
+        // function that calculates the amount of paint required for all of the walls
+        static private float CalcWallPaint(List<float> wallsize, float wallheight)
         {
-            float wallheight = 0, totalwallarea = 0;
-
-            wallheight = GetUserInput("Enter the wall height");
+            float totalwallarea = 0;           
             
             for (int i = 0; i < wallsize.Count; i++)
             {
@@ -45,7 +45,8 @@ namespace RoomCalcV2
             return totalwallarea * 2;
         }
 
-        static private float calcRoomVolume(List<float> wallsize, int wallheight)
+        // calculates the room volume
+        static private float calcRoomVolume(List<float> wallsize, float wallheight)
         {
             float roomvolume = (wallsize[0] * wallsize[1] * wallheight);
             return roomvolume;
@@ -53,19 +54,30 @@ namespace RoomCalcV2
 
         static void Main(string[] args)
         {
-            float area, walllength, requiredpaint;
+            float area, walllength, requiredpaint, coats = 1, volume, wallheight;
+
+            // value to hold all of the walls.
             List<float> wallsize = new List<float>();
 
+            // get dimensions from user
             walllength = GetUserInput("Enter the length of the room");
             wallsize.Add(walllength);
             walllength = GetUserInput("Enter the width of the room");
             wallsize.Add(walllength);
+            wallheight = GetUserInput("Enter the wall height");
 
             area = wallsize[0] * wallsize[1];
             Console.WriteLine("The area of the room is: " + area + " metres squared");
 
-            requiredpaint = CalcWallPaint(wallsize);
-            Console.WriteLine("The required amount of paint for this room is " + requiredpaint + " square metres or " + (requiredpaint / 14) + " litres");
+            volume = calcRoomVolume(wallsize, wallheight);
+            Console.WriteLine("The volume of the room is: " + volume + "metres cubed");
+
+            requiredpaint = CalcWallPaint(wallsize, wallheight);
+            coats = GetUserInput("Enter the number of coats");
+
+            // calculate paint usage by getting the required paint from the calculatewallpaint function and then 
+            // dividing it by the recommended metres per litre.
+            Console.WriteLine("The required amount of paint for this room is " + requiredpaint + " square metres or " + Math.Round((requiredpaint / 14) * coats, 2) + " litres for " + coats + " coats");
             Console.ReadKey();
         }
     }
