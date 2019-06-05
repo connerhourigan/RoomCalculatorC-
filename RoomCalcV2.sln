@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoomCalcV2", "RoomCalcV2\RoomCalcV2.csproj", "{C372D12F-69D2-48CE-8D26-7E4A82A32F47}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoomCalcV2Tests", "RoomCalcV2Tests\RoomCalcV2Tests.csproj", "{B2853908-2DD1-44AF-A138-8938611B2283}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,14 @@ Global
 		{C372D12F-69D2-48CE-8D26-7E4A82A32F47}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C372D12F-69D2-48CE-8D26-7E4A82A32F47}.Release|x64.ActiveCfg = Release|x64
 		{C372D12F-69D2-48CE-8D26-7E4A82A32F47}.Release|x64.Build.0 = Release|x64
+		{B2853908-2DD1-44AF-A138-8938611B2283}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2853908-2DD1-44AF-A138-8938611B2283}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2853908-2DD1-44AF-A138-8938611B2283}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B2853908-2DD1-44AF-A138-8938611B2283}.Debug|x64.Build.0 = Debug|Any CPU
+		{B2853908-2DD1-44AF-A138-8938611B2283}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2853908-2DD1-44AF-A138-8938611B2283}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2853908-2DD1-44AF-A138-8938611B2283}.Release|x64.ActiveCfg = Release|Any CPU
+		{B2853908-2DD1-44AF-A138-8938611B2283}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
